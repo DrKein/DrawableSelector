@@ -1,12 +1,12 @@
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by kein on 15. 5. 31..
@@ -103,6 +103,8 @@ public class DrawableSelector extends AnAction {
             e.printStackTrace();
         }
 
+        Project project = event.getProject();
+        project.getBaseDir().refresh(false,true);
 
     }
 }
