@@ -72,28 +72,28 @@ public class DrawableSelector extends AnAction {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(xml));
             bw.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-            bw.write(System.lineSeparator());
+            bw.write(System.getProperty("line.separator"));
             bw.write("<selector xmlns:android=\"http://schemas.android.com/apk/res/android\">");
-            bw.write(System.lineSeparator());
+            bw.write(System.getProperty("line.separator"));
             if(pressed != null) {
                 bw.write("<item android:state_pressed=\"true\"  android:drawable=\"@drawable/"+ pressed + "\" />");
-                bw.write(System.lineSeparator());
+                bw.write(System.getProperty("line.separator"));
             }
             if(checked != null) {
                 bw.write("<item android:state_checked=\"true\"  android:drawable=\"@drawable/"+ checked + "\" />");
-                bw.write(System.lineSeparator());
+                bw.write(System.getProperty("line.separator"));
             }
             if(selected != null) {
                 bw.write("<item android:state_selected=\"true\"  android:drawable=\"@drawable/"+ selected + "\" />");
-                bw.write(System.lineSeparator());
+                bw.write(System.getProperty("line.separator"));
             }
             if(disabled != null) {
                 bw.write("<item android:state_enabled=\"false\"  android:drawable=\"@drawable/"+ disabled + "\" />");
-                bw.write(System.lineSeparator());
+                bw.write(System.getProperty("line.separator"));
             }
 
             bw.write("<item android:drawable=\"@drawable/"+ normal + "\" />");
-            bw.write(System.lineSeparator());
+            bw.write(System.getProperty("line.separator"));
             bw.write("</selector>");
 
             bw.flush();
